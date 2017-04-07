@@ -223,6 +223,7 @@ LOCAL_C_INCLUDES+= \
  $(LOCAL_PATH)/../appslib \
  $(LOCAL_PATH)/../../common \
 LOCAL_C_INCLUDES+= $(LOCAL_PATH)/../../../../../../hardware/qcom/camera
+LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/include/mm-camera-interface
 
 ifeq ($(MSM_VERSION),7x2x)
 LOCAL_C_INCLUDES+= $(LOCAL_PATH)/../../../mm-still/jpeg

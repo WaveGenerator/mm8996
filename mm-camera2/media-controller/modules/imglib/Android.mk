@@ -72,7 +72,7 @@ LOCAL_C_INCLUDES += $(LOCAL_IMGLIB_PATH)/modules/base
 LOCAL_C_INCLUDES += $(LOCAL_IMGLIB_PATH)/utils
 
 LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-LOCAL_C_INCLUDES += hardware/qcom/camera/QCamera2/stack/common
+LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/include/mm-camera-interface
 LOCAL_C_INCLUDES += $(LOCAL_MMCAMERA_PATH)/media-controller/modules/sensors/chromatix/$(CHROMATIX_VERSION)
 LOCAL_C_INCLUDES += $(LOCAL_MMCAMERA_PATH)/media-controller/modules/sensors/actuators/$(CHROMATIX_VERSION)
 
@@ -283,7 +283,7 @@ LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/utils
 
 LOCAL_C_INCLUDES += $(LOCAL_MMCAMERA_PATH)/media-controller/modules/sensors/chromatix/$(CHROMATIX_VERSION)
-LOCAL_C_INCLUDES += hardware/qcom/camera/QCamera2/stack/common
+LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/include/mm-camera-interface
 
 LOCAL_CFLAGS := $(mmimg_defines)
 LOCAL_CFLAGS += $(COMMON_DEFINES)
@@ -336,7 +336,7 @@ LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include/
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/utils
 
 LOCAL_C_INCLUDES += $(LOCAL_MMCAMERA_PATH)/media-controller/modules/sensors/chromatix/$(CHROMATIX_VERSION)
-LOCAL_C_INCLUDES += hardware/qcom/camera/QCamera2/stack/common
+LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/include/mm-camera-interface
 
 LOCAL_CFLAGS := $(mmimg_defines)
 ifeq ($(call is-board-platform-in-list, msm8909),true)
