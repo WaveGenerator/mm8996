@@ -25,6 +25,7 @@
 static sensor_lib_t sensor_lib_ptr;
 
 static struct msm_sensor_power_setting power_setting[] = {
+/*
   {
     .seq_type = SENSOR_VREG,
     .seq_val = CAM_VIO,
@@ -97,6 +98,7 @@ static struct msm_sensor_power_setting power_setting[] = {
     .config_val = 0,
     .delay = 0,
   },
+*/
 };
 
 static struct msm_camera_sensor_slave_info sensor_slave_info = {
@@ -184,6 +186,7 @@ static struct msm_camera_i2c_reg_array init_reg_array0[] = {
 };
 
 static struct msm_camera_i2c_reg_array init_reg_array1[] = {
+
   {0x0300, 0x01, 0},
   {0x0301, 0x00, 0},
   {0x0302, 0x28, 0},
