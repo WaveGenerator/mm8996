@@ -21,7 +21,6 @@ static sensor_lib_t sensor_lib_ptr;
 #define LOG_TAG "OV5670"
 
 static struct msm_sensor_power_setting ov5670_q5v41b_power_setting[] = {
-
     {
     .seq_type = SENSOR_VREG,
     .seq_val = CAM_VIO,
@@ -30,31 +29,31 @@ static struct msm_sensor_power_setting ov5670_q5v41b_power_setting[] = {
   },
   {
     .seq_type = SENSOR_GPIO,
-    .seq_val = SENSOR_GPIO_VANA,//4,//SENSOR_GPIO_STANDBY,
+    .seq_val = SENSOR_GPIO_VANA,
     .config_val = GPIO_OUT_LOW,
     .delay = 5,
   },
   {
     .seq_type = SENSOR_GPIO,
-    .seq_val = SENSOR_GPIO_VANA,//4,//SENSOR_GPIO_STANDBY,
+    .seq_val = SENSOR_GPIO_VANA,
     .config_val = GPIO_OUT_HIGH,
-    .delay = 10,//5,
+    .delay = 10,
   },
   {
     .seq_type = SENSOR_VREG,
-    .seq_val = 0,
+    .seq_val = CAM_VDIG,
     .config_val = 0,
     .delay = 1,
   },
   {
     .seq_type = SENSOR_GPIO,
-    .seq_val = SENSOR_GPIO_STANDBY,//1,//SENSOR_GPIO_RESET,
+    .seq_val = SENSOR_GPIO_STANDBY,
     .config_val = GPIO_OUT_LOW,
     .delay = 1,
   },
   {
     .seq_type = SENSOR_GPIO,
-    .seq_val = SENSOR_GPIO_STANDBY,//1,//SENSOR_GPIO_RESET,
+    .seq_val = SENSOR_GPIO_STANDBY,
     .config_val = GPIO_OUT_HIGH,
     .delay = 5,
   },
@@ -72,8 +71,8 @@ static struct msm_sensor_power_setting ov5670_q5v41b_power_setting[] = {
   },
   {
     .seq_type = SENSOR_CLK,
-    .seq_val = 0,//SENSOR_CAM_MCLK,
-    .config_val = 0x16E3600,
+    .seq_val = SENSOR_CAM_MCLK,
+    .config_val = 24000000,
     .delay = 10,
   },
   {
@@ -82,7 +81,6 @@ static struct msm_sensor_power_setting ov5670_q5v41b_power_setting[] = {
     .config_val = 0,
     .delay = 0,
   },
-
 };
 
 static struct msm_camera_sensor_slave_info sensor_slave_info = {
@@ -170,7 +168,6 @@ static struct msm_camera_i2c_reg_array init_reg_array0[] = {
 };
 
 static struct msm_camera_i2c_reg_array init_reg_array1[] = {
-
   {0x0300, 0x04}, // PLL
   {0x0301, 0x00},
   {0x0302, 0x69},
@@ -452,7 +449,6 @@ static struct msm_camera_i2c_reg_array init_reg_array1[] = {
   //added
   {0x3d85, 0x17}, // OTP power up load data enable,
   {0x3655, 0x20},
-
 };
 
 static struct msm_camera_i2c_reg_setting init_reg_setting[] = {

@@ -25,7 +25,6 @@
 static sensor_lib_t sensor_lib_ptr;
 
 static struct msm_sensor_power_setting power_setting[] = {
-
   {
     .seq_type = SENSOR_VREG,
     .seq_val = CAM_VIO,
@@ -46,13 +45,13 @@ static struct msm_sensor_power_setting power_setting[] = {
   },
   {
     .seq_type = SENSOR_VREG,
-    .seq_val = CAM_VDIG,//0,
+    .seq_val = CAM_VDIG,
     .config_val = 0,
     .delay = 1,
   },
   {
     .seq_type = SENSOR_VREG,
-    .seq_val = CAM_VAF,//3,
+    .seq_val = CAM_VAF,
     .config_val = 0,
     .delay = 5,
   },
@@ -72,13 +71,13 @@ static struct msm_sensor_power_setting power_setting[] = {
     .seq_type = SENSOR_GPIO,
     .seq_val = SENSOR_GPIO_RESET,
     .config_val = GPIO_OUT_LOW,
-    .delay = 10,
+    .delay = 5,
   },
   {
     .seq_type = SENSOR_GPIO,
     .seq_val = SENSOR_GPIO_RESET,
     .config_val = GPIO_OUT_HIGH,
-    .delay = 5,
+    .delay = 10,
   },
 //	WITH ACTUATOR NOT WORK!!!
 /*
@@ -98,7 +97,7 @@ static struct msm_sensor_power_setting power_setting[] = {
   {
     .seq_type = SENSOR_CLK,
     .seq_val = SENSOR_CAM_MCLK,
-    .config_val = 0x16E3600,
+    .config_val = 24000000,
     .delay = 10,
   },
   {
@@ -107,7 +106,6 @@ static struct msm_sensor_power_setting power_setting[] = {
     .config_val = 0,
     .delay = 0,
   },
-
 };
 
 static struct msm_camera_sensor_slave_info sensor_slave_info = {
@@ -195,7 +193,6 @@ static struct msm_camera_i2c_reg_array init_reg_array0[] = {
 };
 
 static struct msm_camera_i2c_reg_array init_reg_array1[] = {
-
   {0x0300,0x01}, //for 640Mbps
   {0x0301,0x00},
   {0x0302,0x28},
@@ -367,7 +364,6 @@ static struct msm_camera_i2c_reg_array init_reg_array1[] = {
   {0x5b09,0x02},
   {0x5e00,0x00},
   {0x5e10,0x1c},
-
 };
 
 static struct msm_camera_i2c_reg_setting init_reg_setting[] = {
