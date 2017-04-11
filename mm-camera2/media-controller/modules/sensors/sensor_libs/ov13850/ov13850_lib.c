@@ -80,6 +80,8 @@ static struct msm_sensor_power_setting power_setting[] = {
     .config_val = GPIO_OUT_HIGH,
     .delay = 5,
   },
+//	WITH ACTUATOR NOT WORK!!!
+/*
   {
     .seq_type = SENSOR_GPIO,
     .seq_val = SENSOR_GPIO_AF_PWDM,
@@ -92,6 +94,7 @@ static struct msm_sensor_power_setting power_setting[] = {
     .config_val = GPIO_OUT_HIGH,
     .delay = 5,
   },
+*/
   {
     .seq_type = SENSOR_CLK,
     .seq_val = SENSOR_CAM_MCLK,
