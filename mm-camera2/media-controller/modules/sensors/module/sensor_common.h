@@ -42,6 +42,7 @@
 /* This macro will return errval if evaluated expression returned NULL */
 #define RETURN_ERR_ON_NULL(expr, ret, args...)                \
     if ((expr) == NULL) {                                     \
+        SERR("failed NULL pointer detected: "#expr" : "args); \
         return ret;                                           \
     }
 // This macro will return FALSE to ret if evaluated expression returned NULL.

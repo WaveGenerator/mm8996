@@ -974,7 +974,7 @@ void img_dump_frame(img_frame_t *img_frame, char* file_name,
     return;
   }
 
-  if (img_frame/* && img_frame->frame*/) {
+  if (img_frame) {
     char timestamp[30];
     timestamp[0] = '\0';
     rawtime = time(NULL);

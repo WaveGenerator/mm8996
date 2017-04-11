@@ -1,4 +1,4 @@
-ifeq ($(call is-vendor-board-platform,QCOM),_true)
+ifeq ($(call is-vendor-board-platform,QCOM), _true_)
 
 LOCAL_PATH:=$(call my-dir)
 include $(CLEAR_VARS)

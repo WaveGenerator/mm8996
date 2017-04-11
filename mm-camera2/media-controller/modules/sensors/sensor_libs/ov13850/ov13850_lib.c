@@ -71,13 +71,13 @@ static struct msm_sensor_power_setting power_setting[] = {
   {
     .seq_type = SENSOR_GPIO,
     .seq_val = SENSOR_GPIO_RESET,
-    .config_val = GPIO_OUT_HIGH,
+    .config_val = GPIO_OUT_LOW,
     .delay = 10,
   },
   {
     .seq_type = SENSOR_GPIO,
     .seq_val = SENSOR_GPIO_RESET,
-    .config_val = GPIO_OUT_LOW,
+    .config_val = GPIO_OUT_HIGH,
     .delay = 5,
   },
   {

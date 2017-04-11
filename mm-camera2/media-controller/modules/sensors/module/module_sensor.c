@@ -21,7 +21,6 @@
 #include <../stats/q3a/q3a_stats_hw.h>
 #include "led_flash/led_flash.h"
 #include "server_debug.h"
-#include "cam_types.h"
 
 /** Initialization table **/
 static int32_t (*sub_module_init[])(sensor_func_tbl_t *) = {
@@ -2832,14 +2831,12 @@ static boolean module_sensor_event_control_set_parm(
       SERR("failed");
     }
     break;
-/*
   case CAM_INTF_PARM_MULTI_TOUCH_FOCUS_BRACKETING:
     ret = module_sensor_set_param_mtf_bracket(s_bundle, event_control);
     if (ret == FALSE) {
       SERR("failed");
     }
     break;
-*/
   case CAM_INTF_PARM_FLASH_BRACKETING:{
     sensor_bracket_params_t *flash_bracket_params = NULL;
     cam_flash_bracketing_t        *cam_flash_brkt = NULL;
@@ -4258,7 +4255,6 @@ static void module_sensor_find_sensor_subdev(
         rc = 0;
         break;
       }
-      SLOW("SnowCat %s\n", __func__);
       SLOW("entity name %s type %d group id %d",
         entity.name, entity.type, entity.group_id);
       if (entity.type == MEDIA_ENT_T_V4L2_SUBDEV &&

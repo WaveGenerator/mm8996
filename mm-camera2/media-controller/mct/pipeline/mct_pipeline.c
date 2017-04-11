@@ -1839,7 +1839,7 @@ static boolean mct_pipeline_process_get(struct msm_v4l2_event_data *data,
       mct_list_traverse(pipeline->modules, mct_pipeline_query_modules,
         pipeline);
     }
-    if (pipeline->query_buf == NULL || (&pipeline->query_data) == NULL) {
+    if (pipeline->query_buf == NULL) {
       CDBG_ERROR("%s: Error query_data is NULL\n",__func__);
       return FALSE;
     }

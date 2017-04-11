@@ -2275,7 +2275,7 @@ void mct_stream_destroy(mct_stream_t *stream)
   }
   if (!MCT_STREAM_PARENT(stream)) {
     CDBG_ERROR("%s:%d] stream parent is NULL, return.", __func__, __LINE__);
-//    return FALSE;
+    return;
   }
   pipeline = MCT_PIPELINE_CAST((MCT_STREAM_PARENT(stream))->data);
 

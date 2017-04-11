@@ -2104,6 +2104,8 @@ boolean aec_port_init(mct_port_t *port, unsigned int *sessionid)
   aec_port_private_t *private;
   unsigned int       session_id =(((*sessionid) >> 16) & 0x00ff);
 
+   return FALSE;
+
   if (!port || strcmp(MCT_OBJECT_NAME(port), "aec_sink")) {
     return FALSE;
   }
@@ -2115,7 +2117,7 @@ boolean aec_port_init(mct_port_t *port, unsigned int *sessionid)
   memset(private, 0, sizeof(aec_port_private_t));
   /* initialize AEC object */
   AEC_INITIALIZE_LOCK(&private->aec_object);
-//  aec_load_function(&private->aec_object, session_id);
+  aec_load_function(&private->aec_object, session_id);
 
   private->aec_object.aec = private->aec_object.init();
   CDBG("%s: %d: aec=%p", __func__, __LINE__, private->aec_object.aec);

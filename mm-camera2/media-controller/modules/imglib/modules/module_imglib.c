@@ -518,7 +518,7 @@ module_imglib_topo_holder_t *module_imglib_get_topology(mct_module_t *module,
     goto out;
   }
 
-  if (!(p_mod && p_mod->imglib_modules/* && p_mod->topology*/)) {
+  if (!(p_mod && p_mod->imglib_modules)) {
     IDBG_ERROR("%s:%d] Invalid input arguments", __func__, __LINE__);
     goto out;
   }

@@ -9,8 +9,6 @@
 
 #include "mct_object.h"
 #include "mct_stream.h"
-#include "cam_types.h"
-#include "cam_intf.h"
 
 /* Maximum number of resolution for non HFR and HFR mode */
 #define SENSOR_MAX_RESOLUTION 10

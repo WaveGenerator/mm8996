@@ -357,7 +357,7 @@ static boolean module_hdr_lib_start_hdr_filter(void* lib_instance)
 
   IDBG_MED("%s +", __func__);
 
-  if (hdr_lib/* && hdr_lib->out_buff && hdr_lib->in_buff*/) {
+  if (hdr_lib) {
 
     rc = IMG_SUCCESS;
 

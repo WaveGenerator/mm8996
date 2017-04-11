@@ -529,7 +529,7 @@ boolean mod_imglib_dump_frame(img_frame_t *img_frame, char* file_name,
   int32_t out_file_fd;
   char out_file_name[80];
 
-  if (img_frame/* && img_frame->frame*/) {
+  if (img_frame) {
     snprintf(out_file_name, sizeof(out_file_name),
       "%s%s_%d_width_%d_height_%d_stride_%d.yuv",
       "/data/misc/camera/", file_name, number, img_frame->frame->plane[0].width,

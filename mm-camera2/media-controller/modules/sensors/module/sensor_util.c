@@ -893,9 +893,7 @@ boolean sensor_util_check_format(sensor_src_port_cap_t *caps,
       }
       break;
     case CAM_FORMAT_META_RAW_8BIT:
-//    case CAM_FORMAT_META_RAW_10BIT:
-      if (caps->sensor_cid_ch[i].fmt == CAM_FORMAT_META_RAW_8BIT/* ||
-        caps->sensor_cid_ch[i].fmt == CAM_FORMAT_META_RAW_10BIT*/) {
+      if (caps->sensor_cid_ch[i].fmt == CAM_FORMAT_META_RAW_8BIT) {
         return TRUE;
       }
       break;
