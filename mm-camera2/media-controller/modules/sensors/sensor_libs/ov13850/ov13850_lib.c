@@ -94,6 +94,7 @@ static struct msm_sensor_power_setting power_setting[] = {
     .delay = 5,
   },
 */
+/////////////////////////////////////
   {
     .seq_type = SENSOR_CLK,
     .seq_val = SENSOR_CAM_MCLK,
@@ -1221,7 +1222,8 @@ static sensor_lib_t sensor_lib_ptr = {
   /* sensor eeprom name */
   .eeprom_name = "sunny_q13v04b",
   /* sensor actuator name */
-  .actuator_name = "dw9714_q13v04b",
+//	ACTUATOR FALED LOAD SENSOR
+//  .actuator_name = "dw9714_q13v04b",
   /* sensor output settings */
   .sensor_output = &sensor_output,
   /* sensor output register address */
