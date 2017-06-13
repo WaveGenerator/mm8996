@@ -2104,8 +2104,6 @@ boolean aec_port_init(mct_port_t *port, unsigned int *sessionid)
   aec_port_private_t *private;
   unsigned int       session_id =(((*sessionid) >> 16) & 0x00ff);
 
-   return FALSE;
-
   if (!port || strcmp(MCT_OBJECT_NAME(port), "aec_sink")) {
     return FALSE;
   }

@@ -126,7 +126,7 @@ int32_t sensor_probe(int32_t fd, const char *sensor_name)
     SERR("failed: invalid params fd %d sensor_name %s", fd, sensor_name);
     return FALSE;
   }
-//   SERR("SnowCat: sensor_name %s", sensor_name);
+
   /* Load sensor library */
   rc = sensor_load_library(sensor_name, &sensor_lib_params);
   if (rc < 0) {
@@ -169,7 +169,6 @@ int32_t sensor_probe(int32_t fd, const char *sensor_name)
       strlcpy(slave_info->actuator_name,
                actuator_name, strlen(actuator_name) + 1);
 
-//  SERR("SnowCat: VIDIOC_MSM_SENSOR_INIT_CFG sensor_name %s", sensor_name);
   /* Pass slave information to kernel and probe */
   cfg.cfgtype = CFG_SINIT_PROBE;
   cfg.cfg.setting = slave_info;

@@ -1301,7 +1301,7 @@ void awb_port_deinit(mct_port_t *port)
   private = port->port_private;
   if (private) {
   AWB_DESTROY_LOCK((&private->awb_object));
-//  awb_destroy(private->awb_object.awb);
+  awb_destroy(private->awb_object.awb);
     free(private);
     private = NULL;
   }
@@ -1331,7 +1331,7 @@ boolean awb_port_init(mct_port_t *port, unsigned int *session_id)
 
   /* initialize AWB object */
   AWB_INITIALIZE_LOCK(&private->awb_object);
-//  private->awb_object.awb = awb_init(&(private->awb_object.awb_ops));
+  private->awb_object.awb = awb_init(&(private->awb_object.awb_ops));
 
   if (private->awb_object.awb == NULL) {
     free(private);

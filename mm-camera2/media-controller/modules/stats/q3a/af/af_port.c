@@ -3619,7 +3619,7 @@ void af_port_deinit(mct_port_t *port)
   }
 
   AF_DESTROY_LOCK(&private->af_object);
-//  af_destroy(private->af_object.af);
+  af_destroy(private->af_object.af);
   free(private);
 }
 
@@ -3657,7 +3657,7 @@ boolean af_port_init(mct_port_t *port, unsigned int *session_id)
   /* initialize AF object */
   AF_INITIALIZE_LOCK(&(private->af_object));
   CDBG("%s: Init AF!", __func__);
-//  private->af_object.af = af_init(&(private->af_object.af_ops));
+  private->af_object.af = af_init(&(private->af_object.af_ops));
 
   if (private->af_object.af == NULL) {
     CDBG_ERROR("%s: NULL AF object!", __func__);

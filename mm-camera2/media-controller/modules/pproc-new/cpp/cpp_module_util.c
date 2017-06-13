@@ -150,9 +150,9 @@ boolean clk_rate_find_by_value_func(void* data, void** userdata)
   }
   cpp_module_stream_clk_rate_t *curent_clk_obj =
     (cpp_module_stream_clk_rate_t *) data;
-//  uint64_t  *total_load = *(uint64_t *)userdata;
+  uint64_t  *total_load = (uint64_t *)userdata;
 
-  *((uint64_t *)userdata) += curent_clk_obj->total_load;
+  *total_load += curent_clk_obj->total_load;
 
   return TRUE;
 }

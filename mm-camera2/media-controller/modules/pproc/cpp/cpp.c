@@ -235,7 +235,6 @@ int discover_subdev_node(const char *name, uint8_t *num_dev,
         break;
       }
 
-      CDBG("SnowCat %s\n", __func__);
       CDBG("entity name: %s node id: %d\n", entity.name, entity.revision);
       if (entity.type == MEDIA_ENT_T_V4L2_SUBDEV &&
           entity.group_id == MSM_CAMERA_SUBDEV_CPP &&

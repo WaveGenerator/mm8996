@@ -4,6 +4,7 @@ LOCAL_PATH := $(call my-dir)
 LOCAL_DIR_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
+
 LOCAL_CFLAGS :=  -DAMSS_VERSION=$(AMSS_VERSION) \
   $(mmcamera_debug_defines) \
   $(mmcamera_debug_cflags) \
@@ -110,6 +111,7 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/modules/includes/
 #LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../mm-camera-lib/stats/q3a/aec
 #LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../mm-camera-lib/stats/q3a/awb
 #LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../mm-camera-lib/stats/q3a/af
+
 
 #LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../mm-camera-lib/stats/q3a/aec/algorithm
 #LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../mm-camera-lib/stats/q3a/awb/algorithm

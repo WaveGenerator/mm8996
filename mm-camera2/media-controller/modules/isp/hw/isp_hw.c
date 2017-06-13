@@ -2216,7 +2216,7 @@ void isp_hw_proc_subdev_event(isp_hw_t *isp_hw, isp_thread_t *thread_data)
       uint32_t frame_id;
       struct msm_isp_event_data *reg_update_sof =
         (struct msm_isp_event_data *)v4l2_event.u.data;
-      current_session = 
+      current_session =
         isp_util_find_session(isp, isp_hw->pipeline.session_id[VFE_PIX_0]);
       if (!current_session) {
           CDBG_ERROR("%s: can not find session\n", __func__);

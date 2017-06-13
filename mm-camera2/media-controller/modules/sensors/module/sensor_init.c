@@ -141,7 +141,6 @@ boolean sensor_init_probe(module_sensor_ctrl_t *module_ctrl)
 
   /* Open sensor libraries and get init information */
   for (i = 0; i < ARRAY_SIZE(sensor_libs); i++) {
-//    SERR("SnowCat: sensor %s\n", sensor_libs[i]);
     if (mask && !(strcmp(sensor_libs[i] , "ov8858_q8v19w")))
       ret = sensor_probe(sd_fd, "ov8858_q8v19w_30");
     else
