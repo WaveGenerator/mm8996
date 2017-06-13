@@ -28,16 +28,10 @@ static struct msm_sensor_power_setting ov5670_q5v41b_power_setting[] = {
     .delay = 1,
   },
   {
-    .seq_type = SENSOR_GPIO,
-    .seq_val = SENSOR_GPIO_VANA,
-    .config_val = GPIO_OUT_LOW,
-    .delay = 5,
-  },
-  {
-    .seq_type = SENSOR_GPIO,
-    .seq_val = SENSOR_GPIO_VANA,
-    .config_val = GPIO_OUT_HIGH,
-    .delay = 10,
+    .seq_type = SENSOR_VREG,
+    .seq_val = CAM_VANA,
+    .config_val = 0,
+    .delay = 1,
   },
   {
     .seq_type = SENSOR_VREG,
@@ -72,7 +66,7 @@ static struct msm_sensor_power_setting ov5670_q5v41b_power_setting[] = {
   {
     .seq_type = SENSOR_CLK,
     .seq_val = SENSOR_CAM_MCLK,
-    .config_val = 24000000,
+    .config_val = 0x16E3600,
     .delay = 10,
   },
   {

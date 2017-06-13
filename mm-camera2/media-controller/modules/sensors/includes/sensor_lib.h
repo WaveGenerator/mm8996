@@ -233,6 +233,7 @@ typedef struct {
   float sensor_real_gain;
   float sensor_digital_gain;
   uint16_t use_long_exposure;
+  uint16_t unknown;
   uint32_t long_line_count;
 } sensor_exposure_info_t;
 
@@ -351,6 +352,9 @@ typedef struct {
   /*sensor manual exposure info */
   sensor_manual_exposure_info_t *manual_exp_info;
 
+  /* UNKNOWN PARAM */
+  void* unknown;
+
   /* sensor aec info */
   sensor_aec_data_t *aec_info;
 
@@ -363,17 +367,20 @@ typedef struct {
   /* number of frames to skip after start HDR stream info */
   uint16_t sensor_num_HDR_frame_skip;
 
+   uint16_t unknown2;
+
   /* sensor pipeline delay */
   uint32_t sensor_max_pipeline_frame_delay;
 
   /* sensor exposure table size */
-  uint16_t exposure_table_size;
+  uint32_t exposure_table_size;
 
   /* sensor lens info */
   sensor_lens_info_t *default_lens_info;
   
   /* flag to sync exp and gain */
-  uint8_t sync_exp_gain;
+   uint32_t sync_exp_gain;
+
 
   /* csi lane params */
   struct csi_lane_params_t *csi_lane_params;
@@ -386,6 +393,8 @@ typedef struct {
 
   /* csi cid params size */
   uint16_t csi_cid_params_size;
+
+   uint16_t unknown5;
 
   /* init settings */
   struct sensor_lib_reg_settings_array *init_settings_array;

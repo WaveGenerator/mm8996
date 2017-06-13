@@ -34,16 +34,22 @@ static struct msm_sensor_power_setting power_setting[] = {
   {
     .seq_type = SENSOR_GPIO,
     .seq_val = SENSOR_GPIO_VANA,
-    .config_val = GPIO_OUT_LOW,
-    .delay = 5,
+    .config_val = GPIO_OUT_HIGH,
+    .delay = 0,
+  },
+   {
+    .seq_type = SENSOR_VREG,
+    .seq_val = CAM_VANA,
+    .config_val = 0,
+    .delay = 1,
   },
   {
     .seq_type = SENSOR_GPIO,
-    .seq_val = SENSOR_GPIO_VANA,
+    .seq_val = SENSOR_GPIO_VDIG,
     .config_val = GPIO_OUT_HIGH,
-    .delay = 10,
+    .delay = 0,
   },
-  {
+   {
     .seq_type = SENSOR_VREG,
     .seq_val = CAM_VDIG,
     .config_val = 0,
@@ -79,8 +85,6 @@ static struct msm_sensor_power_setting power_setting[] = {
     .config_val = GPIO_OUT_HIGH,
     .delay = 10,
   },
-//	WITH ACTUATOR NOT WORK!!!
-/*
   {
     .seq_type = SENSOR_GPIO,
     .seq_val = SENSOR_GPIO_AF_PWDM,
@@ -93,12 +97,10 @@ static struct msm_sensor_power_setting power_setting[] = {
     .config_val = GPIO_OUT_HIGH,
     .delay = 5,
   },
-*/
-/////////////////////////////////////
   {
     .seq_type = SENSOR_CLK,
     .seq_val = SENSOR_CAM_MCLK,
-    .config_val = 24000000,
+    .config_val = 0x16E3600,
     .delay = 10,
   },
   {
@@ -1223,7 +1225,7 @@ static sensor_lib_t sensor_lib_ptr = {
   .eeprom_name = "sunny_q13v04b",
   /* sensor actuator name */
 //	ACTUATOR FALED LOAD SENSOR
-//  .actuator_name = "dw9714_q13v04b",
+  .actuator_name = "dw9714_q13v04b",
   /* sensor output settings */
   .sensor_output = &sensor_output,
   /* sensor output register address */
