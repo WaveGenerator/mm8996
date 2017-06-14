@@ -127,7 +127,7 @@ endif
 LOCAL_MODULE           := libmmcamera2_stats_modules
 LOCAL_32_BIT_ONLY := true
 
-LOCAL_SHARED_LIBRARIES := libdl libcutils liboemcamera libmmcamera2_is libmmcamera2_stats_algorithm
+LOCAL_SHARED_LIBRARIES := libdl libcutils liboemcamera libmmcamera2_is libmmcamera2_stats_algorithm libmmcamera2_q3a_core
 
 ifeq ($(FEATURE_GYRO), true)
  LOCAL_SHARED_LIBRARIES += libsensor1
