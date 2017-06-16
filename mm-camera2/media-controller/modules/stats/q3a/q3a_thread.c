@@ -10,6 +10,7 @@
 #include <sys/prctl.h>
 #include "camera_dbg.h"
 
+#define Q3A_THREAD_DEBUG 1
 
 #if Q3A_THREAD_DEBUG
 #undef CDBG
@@ -496,11 +497,16 @@ static void* af_thread_handler(void *af_data)
 
     case MSG_AF_SET: {
       CDBG("%s: Set AF parameters ", __func__);
+//	SnowCat AF FAILED AND CRASH
+      if (true){
+          CDBG_ERROR("%s: Set AF parameters FAILED", __func__);
+          continue;
+      }
       af->af_obj->af_ops.set_parameters(&msg->u.af_set_parm,
         &(af->af_obj->output), af->af_obj->af);
       af->af_cb(& (af->af_obj->output), af->af_port);
     }
-      break;
+    break;
 
     case MSG_AF_STATS:
     case MSG_BF_STATS: {

@@ -55,14 +55,14 @@ static struct msm_sensor_power_setting power_setting[] = {
     .config_val = 0,
     .delay = 1,
   },
-/* 
+
  {
     .seq_type = SENSOR_VREG,
     .seq_val = CAM_VAF,
     .config_val = 0,
     .delay = 5,
   },
-*/ 
+
  {
     .seq_type = SENSOR_GPIO,
     .seq_val = SENSOR_GPIO_STANDBY,
@@ -87,20 +87,21 @@ static struct msm_sensor_power_setting power_setting[] = {
     .config_val = GPIO_OUT_HIGH,
     .delay = 10,
   },
-/*
+
   {
-    .seq_type = SENSOR_GPIO,
-    .seq_val = SENSOR_GPIO_AF_PWDM,
+    .seq_type = SENSOR_GPIO, // 1
+    .seq_val = SENSOR_GPIO_AF_PWDM, // 2
     .config_val = GPIO_OUT_LOW,
     .delay = 5,
   },
+
   {
-    .seq_type = SENSOR_GPIO,
-    .seq_val = SENSOR_GPIO_AF_PWDM,
+    .seq_type = SENSOR_GPIO, // 1
+    .seq_val = SENSOR_GPIO_AF_PWDM,  // 2
     .config_val = GPIO_OUT_HIGH,
     .delay = 5,
   },
-*/
+
   {
     .seq_type = SENSOR_CLK,
     .seq_val = SENSOR_CAM_MCLK,
@@ -1229,7 +1230,7 @@ static sensor_lib_t sensor_lib_ptr = {
   .eeprom_name = "sunny_q13v04b",
   /* sensor actuator name */
 //	ACTUATOR FALED LOAD SENSOR
-//  .actuator_name = "dw9714_q13v04b",
+  .actuator_name = "dw9714_q13v04b",
   /* sensor output settings */
   .sensor_output = &sensor_output,
   /* sensor output register address */
