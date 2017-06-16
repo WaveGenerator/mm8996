@@ -176,11 +176,13 @@ struct sensor_lib_out_info_t {
   uint16_t frame_length_lines;
   uint32_t vt_pixel_clk;
   uint32_t op_pixel_clk;
-  uint16_t binning_factor;
+  uint32_t binning_factor;
   float    min_fps;
   float    max_fps;
   uint32_t mode;
-};
+  uint32_t unknown;
+
+  };
 
 struct sensor_lib_out_info_array {
   /* sensor output for each resolutions */
@@ -211,6 +213,7 @@ struct sensor_lib_chromatix_t {
   char *camera_snapshot_chromatix;
   char *camcorder_chromatix;
   char *liveshot_chromatix;
+  char* unknown;
 };
 
 struct sensor_lib_chromatix_array {
@@ -233,6 +236,7 @@ typedef struct {
   float sensor_real_gain;
   float sensor_digital_gain;
   uint16_t use_long_exposure;
+  uint16_t unknown;
   uint32_t long_line_count;
 } sensor_exposure_info_t;
 
@@ -332,7 +336,7 @@ typedef struct {
 
   /* sensor info */
   struct msm_sensor_init_params *sensor_init_params;
-
+  
   /* name of the AF actuator (if any)*/
   char* actuator_name;
 
@@ -341,18 +345,17 @@ typedef struct {
 
   /* sensor output settings */
   sensor_output_t *sensor_output;
-
+  
   /* sensor output register address */
   struct msm_sensor_output_reg_addr_t *output_reg_addr;
 
   /* sensor exposure gain register address */
   struct msm_sensor_exp_gain_info_t *exp_gain_info;
+  
+  uint32_t unknown3;
 
   /*sensor manual exposure info */
   sensor_manual_exposure_info_t *manual_exp_info;
-
-  /* UNKNOWN PARAM */
-  void* unknown;
 
   /* sensor aec info */
   sensor_aec_data_t *aec_info;
@@ -364,19 +367,19 @@ typedef struct {
   uint16_t sensor_num_frame_skip;
 
   /* number of frames to skip after start HDR stream info */
-  uint16_t sensor_num_HDR_frame_skip;
+  uint32_t sensor_num_HDR_frame_skip;
 
   /* sensor pipeline delay */
   uint32_t sensor_max_pipeline_frame_delay;
 
   /* sensor exposure table size */
-  uint16_t exposure_table_size;
+  uint32_t exposure_table_size;
 
   /* sensor lens info */
   sensor_lens_info_t *default_lens_info;
   
   /* flag to sync exp and gain */
-  uint8_t sync_exp_gain;
+   uint32_t sync_exp_gain;
 
   /* csi lane params */
   struct csi_lane_params_t *csi_lane_params;
@@ -388,7 +391,7 @@ typedef struct {
   sensor_stream_info_array_t *sensor_stream_info_array;
 
   /* csi cid params size */
-  uint16_t csi_cid_params_size;
+  uint32_t csi_cid_params_size;
 
   /* init settings */
   struct sensor_lib_reg_settings_array *init_settings_array;
@@ -428,7 +431,8 @@ typedef struct {
   sensor_video_hdr_table_t *video_hdr_awb_lsc_func_table;
 
   /* scale size tbl count*/
-  uint8_t scale_tbl_cnt;
+  uint32_t scale_tbl_cnt;
+
   /* function to get scale size tbl*/
   int32_t (*get_scale_tbl)(msm_sensor_dimension_t *);
 

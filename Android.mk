@@ -187,4 +187,5 @@ ifeq ($(strip $(COMPILE_CAMERA)),true)
     include $(MY_PATH)/apps/Android.mk
     include $(MY_PATH)/targets/Android.mk
   endif
+
 endif #COMPILE_CAMERA

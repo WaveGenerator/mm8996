@@ -103,22 +103,6 @@ include $(BUILD_SHARED_LIBRARY)
 
 LOCAL_PATH:= $(LOCAL_IMGLIB_PATH)
 
-ifeq ($(FEATURE_FACE_PROC),true)
-  include $(CLEAR_VARS)
-  LOCAL_PATH := $(LOCAL_IMGLIB_PATH)/components/lib/faceproc
-  LOCAL_MODULE       := libmmcamera_faceproc
-  LOCAL_32_BIT_ONLY := true
-  LOCAL_MODULE_SUFFIX := .so
-  LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-  LOCAL_SRC_FILES := libmmcamera_faceproc.so
-  LOCAL_MODULE_TAGS := optional eng
-  LOCAL_MODULE_OWNER := qcom 
-  LOCAL_32_BIT_ONLY := true
-  LOCAL_PROPRIETARY_MODULE := true
-
-  include $(BUILD_PREBUILT)
-endif
-
 ################ component library ######################
 include $(CLEAR_VARS)
 
