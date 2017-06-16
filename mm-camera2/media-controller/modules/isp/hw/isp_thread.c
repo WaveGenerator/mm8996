@@ -182,9 +182,8 @@ static int isp_thread_proc_cmd(isp_hw_t *isp_hw,
     thread_data->return_code = 0;
     thread_data->action_cmd = NULL;
     struct msm_isp_event_data sof_parm;
-    isp_session_t *current_session = NULL;
     isp_t *isp = (isp_t*)isp_hw->notify_ops->parent;
-    current_session = isp_util_find_session(isp, isp_hw->pipeline.session_id[0]);
+    isp_session_t *current_session = isp_util_find_session(isp, isp_hw->pipeline.session_id[0]);
     if (current_session == NULL) {
         CDBG_ERROR("%s: No seeison found with session id %d", __func__, isp_hw->pipeline.session_id[0]);
         return -1;

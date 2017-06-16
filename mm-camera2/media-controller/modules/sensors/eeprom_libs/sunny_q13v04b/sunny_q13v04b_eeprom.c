@@ -410,7 +410,7 @@ void sunny_q13v04b_format_lensshading(sensor_eeprom_data_t *e_ctrl)
   SLOW("index = 0x%x",index);
   if (index < 0) {
     SERR("No lens shading calibration data valid\n");
-    return;
+    return -1;
   }
 
   SLOW("LENC start");
@@ -435,7 +435,7 @@ void sunny_q13v04b_format_lensshading(sensor_eeprom_data_t *e_ctrl)
     g_reg_setting.size++;
   }
   SLOW("LENC end");
-  return;
+  return 0;
 }
 
 /** sunny_q13v04b_format_calibration_data:

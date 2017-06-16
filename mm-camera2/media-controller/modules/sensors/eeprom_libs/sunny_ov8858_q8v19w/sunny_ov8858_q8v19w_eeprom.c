@@ -342,7 +342,7 @@ void sunny_ov8858_q8v19w_format_lensshading(sensor_eeprom_data_t *e_ctrl)
 
   if((group_index=sunny_ov8858_q8v19w_get_group_index(flag))==-1){
     SERR("%s:invalid or empty lensshading data",__func__);
-    return;
+    return -1;
   }
 
   start_address = (LENS_FLAG_ADDR_R1A - BASE_ADDR) + (group_index * LENS_GROUP_SIZE_R1A) + 1;
