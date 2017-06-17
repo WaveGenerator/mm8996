@@ -395,7 +395,7 @@ int module_faceproc_sort_results(faceproc_result_t *p_result,
  *
  * Notes: none
  **/
-boolean module_faceproc_client_check_boundary(
+static inline boolean module_faceproc_client_check_boundary(
   faceproc_client_t *p_client,
   fd_rect_t *p_fd_rect,
   img_rect_t *p_img_rect)

@@ -498,10 +498,6 @@ static void* af_thread_handler(void *af_data)
     case MSG_AF_SET: {
       CDBG("%s: Set AF parameters ", __func__);
 //	SnowCat AF FAILED AND CRASH
-      if (af->af_obj == NULL){
-          CDBG_ERROR("SnowCat: %s: Set AF af->af_ob is NULL", __func__);
-          break;
-      }
       if (af->af_obj->af_ops.set_parameters == NULL){
           CDBG_ERROR("SnowCat: %s: Set AF set_parameters is NULL", __func__);
           break;
@@ -562,6 +558,11 @@ boolean q3a_thread_af_start(q3a_thread_af_data_t *af_data)
     af_thread_handler, af_data);
   pthread_setname_np(af_data->thread_data->thread_id, "AF");
   sem_wait(&af_data->thread_data->sem_launch);
+
+      if (af_data->af_obj->af_ops.set_parameters == NULL){
+          CDBG_ERROR("SnowCat: %s: Set AF set_parameters is NULL", __func__);
+      }
+
   return TRUE;
 } /* q3a_thread_af_start */
 

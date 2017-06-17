@@ -9,6 +9,8 @@
 #include "stats_module.h"
 #include "modules.h"
 
+#include "camera_dbg.h"
+#define CDBG CDBG_ERROR
 
 /** afd_port_callback
  *
@@ -734,6 +736,13 @@ boolean afd_port_init(mct_port_t *port, unsigned int identity)
   AFD_INITIALIZE_LOCK(&private->afd_object);
   private->afd_object.set_parameters = afd_set_parameters;
   private->afd_object.get_parameters = afd_get_parameters;
+          CDBG_ERROR("SnowCat: %s: afd_port_init", __func__);
+      if (private->afd_object.set_parameters == NULL){
+          CDBG_ERROR("SnowCat: %s: afd_set_parameters is NULL", __func__);
+      }
+      if (private->afd_object.set_parameters == NULL){
+          CDBG_ERROR("SnowCat: %s: afd_get_parameters is NULL", __func__);
+      }
   private->afd_object.process = afd_process;
   private->afd_object.afd_cb = afd_port_callback;
   private->afd_object.afd = afd_init();

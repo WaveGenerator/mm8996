@@ -16,11 +16,13 @@
 #include "stats_event.h"
 
 #define USE_HAL_3    0
+#define DBG_AF_PORT 1
 
 #ifdef DBG_AF_PORT
 #undef CDBG
 #define CDBG CDBG_ERROR
 #endif
+
 
 /** _af_pre_init_updates:
  *    @is_stream_info_updated: TRUE if stream info update
@@ -2206,6 +2208,9 @@ static void af_port_handle_module_event(mct_port_t *port,
     data->af_port = port;
     data->af_cb = af_port_callback;
     data->af_obj = &(af_port->af_object);
+      if (data->af_obj->af_ops.set_parameters == NULL){
+          CDBG_ERROR("SnowCat: %s: afd_set_parameters is NULL", __func__);
+      }
   }
   break;
 
