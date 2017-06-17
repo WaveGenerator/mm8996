@@ -1230,7 +1230,7 @@ static sensor_lib_t sensor_lib_ptr = {
   .eeprom_name = "sunny_q13v04b",
   /* sensor actuator name */
 //	ACTUATOR FALED LOAD SENSOR
-  .actuator_name = "dw9714_q13v04b",
+//  .actuator_name = "dw9714_q13v04b",
   /* sensor output settings */
   .sensor_output = &sensor_output,
   /* sensor output register address */

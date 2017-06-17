@@ -500,8 +500,9 @@ static void* af_thread_handler(void *af_data)
 //	SnowCat AF FAILED AND CRASH
       if (true){
           CDBG_ERROR("%s: Set AF parameters FAILED", __func__);
-          continue;
+          break;
       }
+	// FALED set_param
       af->af_obj->af_ops.set_parameters(&msg->u.af_set_parm,
         &(af->af_obj->output), af->af_obj->af);
       af->af_cb(& (af->af_obj->output), af->af_port);
