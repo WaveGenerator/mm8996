@@ -2207,7 +2207,7 @@ static void af_port_handle_module_event(mct_port_t *port,
     data->af_cb = af_port_callback;
     data->af_obj = &(af_port->af_object);
   }
-    break;
+  break;
 
   case MCT_EVENT_MODULE_SET_STREAM_CONFIG: {
     /* Update sensor info */
